@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+<STYLE type="text/css">
+<!--Redit Style Top Bar Stuff-->
+body {
+	background-color:white;
+	z-index:1;
+	}
+body,div,dl,dt,dd,ul,ol,li,pre,form,fieldset,input,p,blockquote,th,td,iframe {
+	margin:0;
+	padding:0;
+	}
+#sr-header-area {
+	font:x-small verdana, arial, helvetica, sans-serif;
+	padding:3px 0px 3px 5px;
+	background-color:#f0f0f0;
+	text-transform:uppercase;
+	border-bottom:1px solid gray;
+	font-size:60%;
+	}	
+.flat-list {
+	list-style-type:none; 
+	display: inline;
+	}	
+.flat-list li, .flat-list form {
+	display:inline; 
+	white-space: nowrap; 
+	}	
+ol,ul {
+	list-style:none;
+	}
+.sr-bar a {
+	color:black;
+	} 
+.sr-bar a:active {
+	color:orangered;
+	font-weight:bold;
+	}
+a {
+	text-decoration:none; 
+	color: #369; 
+	}
+.sr-bar .separator {
+	color:gray;
+	}
+.separator {
+	color:gray; 
+	
+	}
+.hover a:hover { 
+	text-decoration:underline 
+	}	
+.hidden {
+	display: none;
+	}	
+.unhidden {
+	display: inline;
+	}
+<!--Redit Style Top Bar Stuff End-->
+
+.pos_fixed
+{
+position:fixed;
+top:20px;
+left:20px;
+}
+
+.pos_fixed2
+{
+position:fixed;
+top:65px;
+right:20px;
+}
+
+#text_block {
+	margin-left: 40px;
+	margin-top: 40px;
+	}
+<!--MISC End-->
+<!--Sticky Footer Stuff-->
+* {
+	margin: 0;
+	}
+html, body {
+	height: 100%;
+	}
+#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -25px; /* Set footer height. */
+	}
+footer, .push {
+	height: 25px; /* Set footer height. */
+	/* clear: both; */ /* Muti-column fix.*/
+	}
+footer {
+	background: white;
+	}
+<!--Sticky Footer Stuff End-->
+
+</STYLE>
+<script type="text/javascript">
+
+/***********************************************
+* Dynamic Ajax Content- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+var bustcachevar=1 //bust potential caching of external pages after initial request? (1=yes, 0=no)
+var loadedobjects=""
+var rootdomain="http://"+window.location.hostname
+var bustcacheparameter=""
+
+function ajaxpage(url, containerid){
+	var page_request = false
+	
+	if (window.XMLHttpRequest) // if Mozilla, Safari etc
+		page_request = new XMLHttpRequest()
+	else if (window.ActiveXObject){ // if IE
+		try {
+		page_request = new ActiveXObject("Msxml2.XMLHTTP")
+		} 
+		catch (e){
+			try{
+			page_request = new ActiveXObject("Microsoft.XMLHTTP")
+			}
+		catch (e){}
+		}
+	}
+	else
+	return false
+	page_request.onreadystatechange=function(){
+		loadpage(page_request, containerid)
+		}
+	if (bustcachevar) //if bust caching of external page
+	bustcacheparameter=(url.indexOf("?")!=-1)? "&"+new Date().getTime() : "?"+new Date().getTime()
+	page_request.open('GET', url+bustcacheparameter, true)
+	page_request.send(null)
+	}
+function loadpage(page_request, containerid){
+if (page_request.readyState == 4 && (page_request.status==200 || window.location.href.indexOf("http")==-1))
+document.getElementById(containerid).innerHTML=page_request.responseText
+}
+function loadobjs(){
+if (!document.getElementById)
+return
+for (i=0; i<arguments.length; i++){
+var file=arguments[i]
+var fileref=""
+if (loadedobjects.indexOf(file)==-1){ //Check to see if this object has not already been added to page before proceeding
+if (file.indexOf(".js")!=-1){ //If object is a js file
+fileref=document.createElement('script')
+fileref.setAttribute("type","text/javascript");
+fileref.setAttribute("src", file);
+}
+else if (file.indexOf(".css")!=-1){ //If object is a css file
+fileref=document.createElement("link")
+fileref.setAttribute("rel", "stylesheet");
+fileref.setAttribute("type", "text/css");
+fileref.setAttribute("href", file);
+}
+}
+if (fileref!=""){
+document.getElementsByTagName("head").item(0).appendChild(fileref)
+loadedobjects+=file+" " //Remember this object as being already added to page
+}
+}
+}
+
+/***Combo Menu Load Ajax snippet**/
+function ajaxcombo(selectobjID, loadarea){
+var selectobj=document.getElementById? document.getElementById(selectobjID) : ""
+if (selectobj!="" && selectobj.options[selectobj.selectedIndex].value!="")
+ajaxpage(selectobj.options[selectobj.selectedIndex].value, loadarea)
+}
+</script>
+</head>
+
+<body>
+<title>Super Emote Tool</title>
+<div id="wrap">
+	<div id="sr-header-area">
+		<ul class="flat-list sr-bar hover">
+			<li>
+				<a href="javascript:ajaxpage('rmlp.html', 'contentarea');">mylittlepony</a>
+			</li>
+			<li>
+				<span class="separator">-</span>
+				<a href="javascript:ajaxpage('rmlplounge.html', 'contentarea');">MLPLounge</a>
+			</li>
+			<li>
+				<span class="separator">-</span>
+				<a href="javascript:ajaxpage('rmllivestream.html', 'contentarea');">MyLittleLivestream</a>
+			</li>
+			<li>
+				<span class="separator">-</span>
+				<a href="javascript:ajaxpage('MLAS1/mylittleandysonic1.html', 'contentarea');">mylittleandysonic1</a>
+			</li>
+			<li>
+				<span class="separator">-</span>
+				<a href="javascript:ajaxpage('mlas1animotes.html', 'contentarea');">mlas1animotes</a>
+			</li>
+			<li>
+				<span class="separator">-</span>
+				<a href="javascript:ajaxpage('rmlwtf.html', 'contentarea');">mylittleWTF</a>
+			</li>
+			<li>
+				<span class="separator">-</span>
+				<a href="javascript:ajaxpage('idliketobeatree.html', 'contentarea');">Idliketobeatree</a>
+			</li>
+			<li>
+				<span class="separator">-</span>
+				<a href="javascript:ajaxpage('mylittleonions.html', 'contentarea');">mylittleonions</a>
+			</li>
+			<li>
+				<span class="separator">-</span>
+				<a href="javascript:ajaxpage('vinylscratch.html', 'contentarea');">vinylscratch</a>
+			</li>
+			<li>
+				<span class="separator">-</span>
+				<a href="javascript:ajaxpage('applejack.html', 'contentarea');">applejack</a>
+			</li>
+			<li>
+				<span class="separator">-</span>
+				<a href="javascript:ajaxpage('mylittlesquidward.html', 'contentarea');">mylittlesquidward</a>
+			</li>
+			<li>
+				<span class="separator">-</span>
+				<a href="javascript:ajaxpage('mylittlefortress.html', 'contentarea');">mylittlefortress</a>
+			</li>
+			<li>
+				<span class="separator">-</span>
+				<a href="javascript:ajaxpage('mylittlenopenopenope.html', 'contentarea');">MyLittleNopeNopeNope</a>
+			</li>
+			<li>
+				<span class="separator">-</span>
+				<a href="javascript:ajaxpage('daylightemotes.html', 'contentarea');">daylightemotes</a>
+			</li>
+			<li>
+				<span class="separator">-</span>
+				<a href="javascript:ajaxpage('mylittledaww.html', 'contentarea');">mylittledaww</a>
+			</li>
+			<li>
+				<span class="separator">-</span>
+				<a href="javascript:ajaxpage('mylittlenanners.html', 'contentarea');">mylittlenanners</a>
+			</li>
+		</ul>
+	</div>
+	<div id="contentarea">
+	<img class="pos_fixed" src="http://i.imgur.com/oIB7w.png"/>
+	<img class="pos_fixed2" src="http://i.imgur.com/cmmSJ.png"/>
+	<br>
+	<div id="text_block">
+	<h2>Welcome to the Super Emote Tool!</h2>
+	
+	<h3>What is this thing anyways?</h3>
+	I used to be like you hopping around to all the different pony subs trying to find the emote I wanted to use. <br>So I figured why not put them all in one place? After some serious nose to the grindstone copy pasta and things of that nature <br>the Super Emote Toool was born!
+	
+	<h3>The page for (x) is missing some emotes!</h3>
+	First thing to note is I try to only include emotes unique to the sub.<br>I do this to reduce clutter and confusion and also because alot of people use scripts to see emotes form other subs everywhere on reddit already!<br>Other than that if you feel that I have genuinely missed an emote please shoot me an <a href ="http://scr.im/mljbrony" target="_blank">email</a>! 
+	
+	<h3>Would you add my sub to the tool?</h3>
+	Shoot me an <a href ="http://scr.im/mljbrony" target="_blank">email</a> and we can discuss it! Keep in mind that it should have unique emotes and be pony related.
+	
+	<h3>Who is the best pony?</h3>
+	Why that would be Cheerilee, thanks for asking! <img src="http://i.imgur.com/9E1mR.png" alt="Deal with it..." height="50" width="50" />
+	
+	<p style="color:blue;"><h3>Whats New in v0.02:</h3></p>
+	<ul>
+		<li>- Added new Headers to all emote pages.</li>
+		<li>- Added links to scripts for some subreddits.</li>
+		<li>- Links "light up" when clicked.</li>
+	</ul>
+	</div>
+	</div>
+	<div class="push">
+	<!--Sticky Footer Push-->
+	</div>		
+</div>
+<footer><Strong>Super Emote Tool v0.02 - Created By <a href="http://www.reddit.com/user/j-brony/">J-Brony</a></Strong></footer>
+</body>
+</html>
