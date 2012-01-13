@@ -1,106 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<STYLE type="text/css">
-<!--Redit Style Top Bar Stuff-->
-body {
-	background-color:white;
-	z-index:1;
-	}
-body,div,dl,dt,dd,ul,ol,li,pre,form,fieldset,input,p,blockquote,th,td,iframe {
-	margin:0;
-	padding:0;
-	}
-#sr-header-area {
-	font:x-small verdana, arial, helvetica, sans-serif;
-	padding:3px 0px 3px 5px;
-	background-color:#f0f0f0;
-	text-transform:uppercase;
-	border-bottom:1px solid gray;
-	font-size:60%;
-	}	
-.flat-list {
-	list-style-type:none; 
-	display: inline;
-	}	
-.flat-list li, .flat-list form {
-	display:inline; 
-	white-space: nowrap; 
-	}	
-ol,ul {
-	list-style:none;
-	}
-.sr-bar a {
-	color:black;
-	} 
-.sr-bar a:active {
-	color:orangered;
-	font-weight:bold;
-	}
-a {
-	text-decoration:none; 
-	color: #369; 
-	}
-.sr-bar .separator {
-	color:gray;
-	}
-.separator {
-	color:gray; 
-	
-	}
-.hover a:hover { 
-	text-decoration:underline 
-	}	
-.hidden {
-	display: none;
-	}	
-.unhidden {
-	display: inline;
-	}
-<!--Redit Style Top Bar Stuff End-->
-
-.pos_fixed
-{
-position:fixed;
-top:20px;
-left:20px;
-}
-
-.pos_fixed2
-{
-position:fixed;
-top:65px;
-right:20px;
-}
-
-#text_block {
-	margin-left: 40px;
-	margin-top: 40px;
-	}
-<!--MISC End-->
-<!--Sticky Footer Stuff-->
-* {
-	margin: 0;
-	}
-html, body {
-	height: 100%;
-	}
-#wrap {
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	margin: 0 auto -25px; /* Set footer height. */
-	}
-footer, .push {
-	height: 25px; /* Set footer height. */
-	/* clear: both; */ /* Muti-column fix.*/
-	}
-footer {
-	background: white;
-	}
-<!--Sticky Footer Stuff End-->
-
-</STYLE>
+	<link rel='stylesheet' type="text/css" href='style.css'/>
 <script type="text/javascript">
 
 /***********************************************
@@ -180,77 +81,59 @@ ajaxpage(selectobj.options[selectobj.selectedIndex].value, loadarea)
 
 <body>
 <title>Super Emote Tool</title>
-<div id="wrap">
-	<div id="sr-header-area">
-		<ul class="flat-list sr-bar hover">
-			<li>
-				<a href="javascript:ajaxpage('rmlp.html', 'contentarea');">mylittlepony</a>
-			</li>
-			<li>
-				<span class="separator">-</span>
-				<a href="javascript:ajaxpage('rmlplounge.html', 'contentarea');">MLPLounge</a>
-			</li>
-			<li>
-				<span class="separator">-</span>
-				<a href="javascript:ajaxpage('rmllivestream.html', 'contentarea');">MyLittleLivestream</a>
-			</li>
-			<li>
-				<span class="separator">-</span>
-				<a href="javascript:ajaxpage('MLAS1/mylittleandysonic1.html', 'contentarea');">mylittleandysonic1</a>
-			</li>
-			<li>
-				<span class="separator">-</span>
-				<a href="javascript:ajaxpage('mlas1animotes.html', 'contentarea');">mlas1animotes</a>
-			</li>
-			<li>
-				<span class="separator">-</span>
-				<a href="javascript:ajaxpage('rmlwtf.html', 'contentarea');">mylittleWTF</a>
-			</li>
-			<li>
-				<span class="separator">-</span>
-				<a href="javascript:ajaxpage('idliketobeatree/idliketobeatree.html', 'contentarea');">Idliketobeatree</a>
-			</li>
-			<li>
-				<span class="separator">-</span>
-				<a href="javascript:ajaxpage('mylittleonions.html', 'contentarea');">mylittleonions</a>
-			</li>
-			<li>
-				<span class="separator">-</span>
-				<a href="javascript:ajaxpage('vinylscratch.html', 'contentarea');">vinylscratch</a>
-			</li>
-			<li>
-				<span class="separator">-</span>
-				<a href="javascript:ajaxpage('applejack.html', 'contentarea');">applejack</a>
-			</li>
-			<li>
-				<span class="separator">-</span>
-				<a href="javascript:ajaxpage('mylittlesquidward.html', 'contentarea');">mylittlesquidward</a>
-			</li>
-			<li>
-				<span class="separator">-</span>
-				<a href="javascript:ajaxpage('mylittlefortress.html', 'contentarea');">mylittlefortress</a>
-			</li>
-			<li>
-				<span class="separator">-</span>
-				<a href="javascript:ajaxpage('mylittlenopenopenope.html', 'contentarea');">MyLittleNopeNopeNope</a>
-			</li>
-			<li>
-				<span class="separator">-</span>
-				<a href="javascript:ajaxpage('daylightemotes.html', 'contentarea');">daylightemotes</a>
-			</li>
-			<li>
-				<span class="separator">-</span>
-				<a href="javascript:ajaxpage('mylittledaww.html', 'contentarea');">mylittledaww</a>
-			</li>
-			<li>
-				<span class="separator">-</span>
-				<a href="javascript:ajaxpage('mylittlenanners.html', 'contentarea');">mylittlenanners</a>
-			</li>
-		</ul>
-	</div>
+<div id="wrapper">
+	<ul id='subredditmenu'>
+		<li>
+			<a href="javascript:ajaxpage('rmlp.html', 'contentarea');">mylittlepony</a>
+		</li>
+		<li>
+			<a href="javascript:ajaxpage('rmlplounge.html', 'contentarea');">MLPLounge</a>
+		</li>
+		<li>
+			<a href="javascript:ajaxpage('rmllivestream.html', 'contentarea');">MyLittleLivestream</a>
+		</li>
+		<li>
+			<a href="javascript:ajaxpage('MLAS1/mylittleandysonic1.html', 'contentarea');">mylittleandysonic1</a>
+		</li>
+		<li>
+			<a href="javascript:ajaxpage('mlas1animotes.html', 'contentarea');">mlas1animotes</a>
+		</li>
+		<li>
+			<a href="javascript:ajaxpage('rmlwtf.html', 'contentarea');">mylittleWTF</a>
+		</li>
+		<li>
+			<a href="javascript:ajaxpage('idliketobeatree/idliketobeatree.html', 'contentarea');">Idliketobeatree</a>
+		</li>
+		<li>
+			<a href="javascript:ajaxpage('mylittleonions.html', 'contentarea');">mylittleonions</a>
+		</li>
+		<li>
+			<a href="javascript:ajaxpage('vinylscratch.html', 'contentarea');">vinylscratch</a>
+		</li>
+		<li>
+			<a href="javascript:ajaxpage('applejack.html', 'contentarea');">applejack</a>
+		</li>
+		<li>
+			<a href="javascript:ajaxpage('mylittlesquidward.html', 'contentarea');">mylittlesquidward</a>
+		</li>
+		<li>
+			<a href="javascript:ajaxpage('mylittlefortress.html', 'contentarea');">mylittlefortress</a>
+		</li>
+		<li>
+			<a href="javascript:ajaxpage('mylittlenopenopenope.html', 'contentarea');">MyLittleNopeNopeNope</a>
+		</li>
+		<li>
+			<a href="javascript:ajaxpage('daylightemotes.html', 'contentarea');">daylightemotes</a>
+		</li>
+		<li>
+			<a href="javascript:ajaxpage('mylittledaww.html', 'contentarea');">mylittledaww</a>
+		</li>
+		<li>
+			<a href="javascript:ajaxpage('mylittlenanners.html', 'contentarea');">mylittlenanners</a>
+		</li>
+	</ul>
 	<div id="contentarea">
-	<img class="pos_fixed" src="http://i.imgur.com/oIB7w.png"/>
-	<img class="pos_fixed2" src="http://i.imgur.com/cmmSJ.png"/>
+	<img src="http://i.imgur.com/oIB7w.png" atl='Choose A SubReddit!'/>
 	<br>
 	<div id="text_block">
 	<h2>Welcome to the Super Emote Tool!</h2>
@@ -277,8 +160,8 @@ ajaxpage(selectobj.options[selectobj.selectedIndex].value, loadarea)
 	</div>
 	<div class="push">
 	<!--Sticky Footer Push-->
-	</div>		
+	</div>
+	<footer><Strong>Super Emote Tool v0.02 - Created By <a href="http://www.reddit.com/user/j-brony/">J-Brony</a></Strong></footer>
 </div>
-<footer><Strong>Super Emote Tool v0.02 - Created By <a href="http://www.reddit.com/user/j-brony/">J-Brony</a></Strong></footer>
 </body>
 </html>

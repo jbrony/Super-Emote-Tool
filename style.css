@@ -1,0 +1,94 @@
+html, body{
+	height: 100%;
+}
+
+body{
+	background: #fff;
+	font-size: 10px;
+	font-family: verdana, arial, helvetica, sans-serif;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	list-style-type: none;
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+	margin: 1em 0;
+}
+
+a{
+	color: #369; 
+}
+
+#wrapper{
+	min-height: 100%;
+	position: relative;
+}
+
+footer{
+	position: absolute;
+	left: 1em;
+	bottom: .5em;
+	font-size: 1.2em;
+}
+
+#contentarea{
+	background: url('http://i.imgur.com/cmmSJ.png') no-repeat right top;
+}
+
+#text_block{
+	font-size: 1.2em;
+	padding-left: 5em;
+	padding-top: 1em;
+}
+
+/* Tables */
+table{ 
+	border-collapse:collapse; 
+}
+
+table, th, td {
+	border: 1px solid #000;
+	font-weight: normal;
+}
+
+td{
+	text-align: center;
+}
+
+/* Reddit Style Menu */
+
+#subredditmenu{
+	font-size: 9.6px;
+	padding: 3px 0px 3px 5px;
+	background: #f0f0f0;
+	text-transform: uppercase;
+	border-bottom: 1px solid #888;
+}	
+
+#subredditmenu li{
+	display:inline; 
+	white-space: nowrap; 
+}
+
+#subredditmenu a{
+	color:black;
+}
+
+#subredditmenu a:hover{
+	text-decoration: underline;
+}
+
+#subredditmenu li:before{
+	content: '- ';
+}
+
+#subredditmenu li:first-child:before{
+	content: '';
+}
+
+
