@@ -4,27 +4,51 @@
 	<meta charset='UTF-8'>
 	<title>Super Emote Tool</title>
 	<link rel='stylesheet' type='text/css' href='style.css'/>
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
 	<script type='text/javascript' src='script.js'></script>
+	<script type='text/javascript'>
+		// Executes when the DOM is fully loaded.
+		$(document).ready(function(){
+			// Automatically binds the subredditmenu links to the
+			// JavaScript function to load their data.
+			// The html file to link to should be located in the /emotes folder
+			// with the same name as the text of the link.
+			// So <a>mylittlepony</a> would link to:
+			// /emotes/mylittlepony.html.
+			$("#subredditmenu").find("a")
+				.attr("src", '#')
+				.click(function(){
+					display_emotes($(this));
+					return false;
+				});
+			// Binds the 'load' event for the iframe so that when it
+			// is finished loading its height will automatically
+			// adjust to its contents.
+			$("#emotetables").load(function(){
+				$(this).height($(this).contents().height());
+			});
+		});
+	</script>
 </head>
 <body>
 <div id="wrapper">
 	<ul id='subredditmenu'>
-		<li><a href="javascript:ajaxpage('rmlp.html', 'contentarea');">mylittlepony</a></li>
-		<li><a href="javascript:ajaxpage('rmlplounge.html', 'contentarea');">MLPLounge</a></li>
-		<li><a href="javascript:ajaxpage('rmllivestream.html', 'contentarea');">MyLittleLivestream</a></li>
-		<li><a href="javascript:ajaxpage('MLAS1/mylittleandysonic1.html', 'contentarea');">mylittleandysonic1</a></li>
-		<li><a href="javascript:ajaxpage('mlas1animotes.html', 'contentarea');">mlas1animotes</a></li>
-		<li><a href="javascript:ajaxpage('rmlwtf.html', 'contentarea');">mylittleWTF</a></li>
-		<li><a href="javascript:ajaxpage('idliketobeatree/idliketobeatree.html', 'contentarea');">Idliketobeatree</a></li>
-		<li><a href="javascript:ajaxpage('mylittleonions.html', 'contentarea');">mylittleonions</a></li>
-		<li><a href="javascript:ajaxpage('vinylscratch.html', 'contentarea');">vinylscratch</a></li>
-		<li><a href="javascript:ajaxpage('applejack.html', 'contentarea');">applejack</a></li>
-		<li><a href="javascript:ajaxpage('mylittlesquidward.html', 'contentarea');">mylittlesquidward</a></li>
-		<li><a href="javascript:ajaxpage('mylittlefortress.html', 'contentarea');">mylittlefortress</a></li>
-		<li><a href="javascript:ajaxpage('mylittlenopenopenope.html', 'contentarea');">MyLittleNopeNopeNope</a></li>
-		<li><a href="javascript:ajaxpage('daylightemotes.html', 'contentarea');">daylightemotes</a></li>
-		<li><a href="javascript:ajaxpage('mylittledaww.html', 'contentarea');">mylittledaww</a></li>
-		<li><a href="javascript:ajaxpage('mylittlenanners.html', 'contentarea');">mylittlenanners</a></li>
+		<li><a>mylittlepony</a></li>
+		<li><a>MLPLounge</a></li>
+		<li><a>MyLittleLivestream</a></li>
+		<li><a>mylittleandysonic1</a></li>
+		<li><a>mlas1animotes</a></li>
+		<li><a>mylittleWTF</a></li>
+		<li><a>Idliketobeatree</a></li>
+		<li><a>mylittleonions</a></li>
+		<li><a>vinylscratch</a></li>
+		<li><a>applejack</a></li>
+		<li><a>mylittlesquidward</a></li>
+		<li><a>mylittlefortress</a></li>
+		<li><a>MyLittleNopeNopeNope</a></li>
+		<li><a>daylightemotes</a></li>
+		<li><a>mylittledaww</a></li>
+		<li><a>mylittlenanners</a></li>
 	</ul>
 	<div id="contentarea">
 		<img src="http://i.imgur.com/oIB7w.png" alt='Choose A SubReddit!'/>
@@ -55,6 +79,7 @@
 			</ul>
 		</div>
 	</div>
+	<iframe id='emotetables'></iframe>
 	<footer><strong>Super Emote Tool v0.02 - Created By <a href="http://www.reddit.com/user/j-brony/">J-Brony</a></strong></footer>
 </div>
 </body>

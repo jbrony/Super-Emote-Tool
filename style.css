@@ -16,6 +16,11 @@ body{
 	text-decoration: none;
 }
 
+iframe{
+	overflow: hidden;
+	width: 100%;
+}
+
 h1, h2, h3, h4, h5, h6{
 	margin: 1em 0;
 }
@@ -77,6 +82,7 @@ td{
 
 #subredditmenu a{
 	color:black;
+	cursor: pointer;
 }
 
 #subredditmenu a:hover{
