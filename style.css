@@ -19,6 +19,7 @@ body{
 iframe{
 	overflow: hidden;
 	width: 100%;
+	margin-bottom: 2em;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -89,6 +90,10 @@ td{
 	text-decoration: underline;
 }
 
+#subredditmenu a:active {
+	color:orangered;
+}
+
 #subredditmenu li:before{
 	content: '- ';
 }
@@ -96,5 +101,3 @@ td{
 #subredditmenu li:first-child:before{
 	content: '';
 }
-
-

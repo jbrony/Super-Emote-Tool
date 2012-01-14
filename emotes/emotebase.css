@@ -1,0 +1,37 @@
+body {
+	background-image:none;
+	background-color:white;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 11px;
+	}
+table {
+	border-collapse:collapse;
+	}
+table,th, td {
+	border: 1px solid black;
+	text-align: center;
+	}
+#outer { 
+	text-align: center;
+	}
+#inner {
+	text-align: left; 
+	margin: 0 auto;
+	}
+#clearit { 
+	clear: left; 
+	}
+#text_block {
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	}
+#header1 {
+	padding-left:10px;
+	}
+.header2 {
+	padding-left:30px;
+	}
+.t {
+	float: left; margin-left: 10px;
+	}
