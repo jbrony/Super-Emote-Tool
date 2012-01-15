@@ -26,6 +26,9 @@
 			// adjust to its contents.
 			$("#emotetables").load(function(){
 				$(this).height($(this).contents().height());
+				$(this).contents().find(".t a").click(function(){
+					return false;
+				});
 			});
 		});
 	</script>
