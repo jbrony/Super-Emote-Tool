@@ -21,11 +21,17 @@
 					display_emotes($(this));
 					return false;
 				});
-			// Binds the 'load' event for the iframe so that when it
-			// is finished loading its height will automatically
-			// adjust to its contents.
+			// Fires when the load finishes on the iframe.
 			$("#emotetables").load(function(){
+				// Resize the iframe to the appropriate height.
 				$(this).height($(this).contents().height());
+				// Remove the link from the emotes.
+				$(this).contents().find(".t a").click(function(){
+					return false;
+				}).each(function(){
+					// Add the mouse over text.
+					$(this).attr("title", $(this).attr("href"));
+				});
 			});
 		});
 	</script>

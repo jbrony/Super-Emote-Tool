@@ -35,3 +35,6 @@ table,th, td {
 .t {
 	float: left; margin-left: 10px;
 	}
+.t a{
+	cursor: default;
+}
