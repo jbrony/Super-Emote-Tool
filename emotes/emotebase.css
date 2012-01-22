@@ -10,6 +10,7 @@ table {
 table,th, td {
 	border: 1px solid black;
 	text-align: center;
+	color: black;
 	}
 #outer { 
 	text-align: center;
@@ -25,6 +26,7 @@ table,th, td {
 	padding-left: 10px;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	color: black;
 	}
 #header1 {
 	padding-left:10px;
