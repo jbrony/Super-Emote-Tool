@@ -1,6 +1,6 @@
 body {
-	background-image:none;
-	background-color:white;
+	background-image:none !important;
+	background-color:white !important;
 	font-family: verdana, arial, helvetica, sans-serif;
 	font-size: 11px;
 	}
