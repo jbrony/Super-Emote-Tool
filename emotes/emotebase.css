@@ -1,4 +1,4 @@
-body {
+body, body:first-of-type, body.res-nightmode:first-of-type {
 	background-image:none !important;
 	background-color:white !important;
 	font-family: verdana, arial, helvetica, sans-serif;
