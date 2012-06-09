@@ -17,7 +17,7 @@ body{
 }
 
 iframe{
-	overflow: hidden;
+	overflow: auto;
 	width: 100%;
 	margin-bottom: 2em;
 }
@@ -26,18 +26,27 @@ h1, h2, h3, h4, h5, h6{
 	margin: 1em 0;
 }
 
+#subredditmenu h2{
+	margin: .3em 0;
+	text-decoration:underline
+}
+
 a{
 	color: #369; 
 }
 
 #wrapper{
 	min-height: 100%;
-	position: relative;
+	width: 88%;
+	position: absolute;
+	left:185px;
+	top:0px;
+	overflow: hidden;
 }
 
 footer{
 	position: absolute;
-	left: 1em;
+	left: 3em;
 	bottom: .5em;
 	font-size: 1.2em;
 }
@@ -66,6 +75,13 @@ td{
 	text-align: center;
 }
 
+#wrapper2 {
+  position: fixed;
+  width: 185px;
+  height: 100%;
+  overflow: auto;
+}
+
 /* Reddit Style Menu */
 
 #subredditmenu{
@@ -73,7 +89,6 @@ td{
 	padding: 3px 0px 3px 5px;
 	background: #f0f0f0;
 	text-transform: uppercase;
-	border-bottom: 1px solid #888;
 }	
 
 #subredditmenu li{
@@ -82,6 +97,9 @@ td{
 }
 
 #subredditmenu a{
+	display: block;
+	margin-bottom: 5px;
+	width: 130px;
 	color:black;
 	cursor: pointer;
 }
@@ -92,12 +110,4 @@ td{
 
 #subredditmenu a:active {
 	color:orangered;
-}
-
-#subredditmenu li:before{
-	content: '- ';
-}
-
-#subredditmenu li:first-child:before{
-	content: '';
 }
