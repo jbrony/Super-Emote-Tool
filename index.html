@@ -1,137 +1,110 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset='UTF-8'>
-	<title>Super Emote Tool</title>
-	<link rel='stylesheet' type='text/css' href='style.css'/>
-	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
-	<script type='text/javascript' src='script.js'></script>
-	<script type='text/javascript'>
-		// Executes when the DOM is fully loaded.
-		$(document).ready(function(){
-			// Automatically binds the subredditmenu links to the
-			// JavaScript function to load their data.
-			// The html file to link to should be located in the /emotes folder
-			// with the same name as the text of the link.
-			// So <a>mylittlepony</a> would link to:
-			// /emotes/mylittlepony.html.
-			$("#subredditmenu").find("a")
-				.attr("src", '#')
-				.click(function(){
-					display_emotes($(this));
-					return false;
-				});
-			// Fires when the load finishes on the iframe.
-			$("#emotetables").load(function(){
-				// Resize the iframe to the appropriate height.
-				$(this).height($(this).contents().height());
-				// Remove the link from the emotes.
-				$(this).contents().find(".t a").click(function(){
-					return false;
-				}).each(function(){
-					// Add the mouse over text.
-					$(this).attr("title", $(this).attr("href"));
-				});
-			});
-		});
-	</script>
-	<script type="text/javascript">
+  <head>
+    <meta charset='UTF-8'>
+    <title>Super Emote Tool</title>
+    <link rel='stylesheet' type='text/css' href='style.css'/>
+  </head>
+  <body>
+    <div id="wrapper2">
+      <ul id='subredditmenu'>
+        <li><h2><u>Super Emote Tool</u></h3></li>
+        <li><a>MyLittlePony</a></li>
+        <li><a>MLPlounge</a></li>
+        <li><a>MyLittleLivestream</a></li>
+        <li><a>MyLittleAndySonic1</a></li>
+        <li><a>MLAS1Animotes</a></li>
+        <li><a>MyLittleWtf</a></li>
+        <li><a>IdLikeToBeATree</a></li>
+        <li><a>MyLittleOnions</a></li>
+        <li><a>VinylScratch</a></li>
+        <li><a>Applejack</a></li>
+        <li><a>MyLittleSquidward</a></li>
+        <li><a>MyLittleFortress</a></li>
+        <li><a>MyLittleNopeNopeNope</a></li>
+        <li><a>DaylightEmotes</a></li>
+        <li><a>MyLittleDaww</a></li>
+        <li><a>MyLittleNanners</a></li>
+        <li><a>MyLittleNoSleep</a></li>
+        <li><a>MyLittleDamon</a></li>
+        <li><a>TheBestPony</a></li>
+        <li><a>tbpimagedump</a></li>
+        <li><a>Roseluck</a></li>
+        <li><a>MyLittleMusician</a></li>
+        <li><a>MyLittleCelestias</a></li>
+        <li><a>MyLittleChaos</a></li>
+        <li><a>MyLittleAlcoholic</a></li>
+        <li><a>MyLittleListenToThis</a></li>
+        <li><a>Surprise</a></li>
+        <li><a>PinkiePie</a></li>
+        <li><a>TwilightSparkle</a></li>
+        <li><a>Minuette</a></li>
+        <li><a>Lyra</a></li>
+        <li><a>MyLittleFoodManes</a></li>
+        <li><a>MyLittleSports</a></li>
+      </ul>
+    </div>
 
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-28726533-1']);
-	  _gaq.push(['_trackPageview']);
+    <div id="wrapper">
+      <div id="contentarea">
+        <img src="images/choose.png" alt='Choose A SubReddit!'/>
+        <div id="textblock">
+          <h2>Welcome to the Super Emote Tool!</h2>
+    
+          <h3>What is this thing anyways?</h3>
+          I used to be like you hopping around to all the different pony subs trying to find the emote I wanted to use.<br/>
+          So I figured why not put them all in one place? After some serious nose to the grindstone copy pasta and things of that nature<br/>
+          the Super Emote Toool was born!
+    
+          <h3>The page for (x) is missing some emotes!</h3>
+          First thing to note is I try to only include emotes unique to the sub.<br/>
+          I do this to reduce clutter and confusion and also because a lot of people use scripts to see emotes from other subs everywhere on reddit already!<br/>
+          Other than that if you feel that I have genuinely missed an emote please shoot me an <a href="http://scr.im/mljbrony" target="_blank">email</a>! 
+    
+          <h3>Would you add my sub to the tool?</h3>
+          Shoot me an <a href="http://scr.im/mljbrony" target="_blank">email</a> and we can discuss it! Keep in mind that it should have unique emotes and be pony related.
+    
+          <h3>Who is the best pony?</h3>
+          Why that would be Cheerilee, thanks for asking! <img src="images/cheerilee.png" alt="Deal with it..." />
+       
+          <div class="changelog"> 
+            <h3>Whats New in v0.05:</h3>
+            <ul>
+              <li>- New Navigation Method.</li>
+              <li>- Send feedback to me <a href="http://scr.im/mljbrony" target="_blank">here</a></li>
+            </ul>
+          
+            <h3>Whats New in v0.04:</h3>
+            <ul>
+              <li>- Removed the click-ability of the emotes.</li>
+              <li>- When mousing over an emote it will show the code used to produce that emote.</li>
+            </ul>
+      
+            <h3>Whats New in v0.03:</h3>
+            <ul>
+              <li>- Major backend changes thanks to <a href="http://www.reddit.com/user/AcidandGrit">AcidandGrit</a>!</li>
+              <li>- Changed links to scripts for subreddits to the new <a href="http://jbrony.nfshost.com/redditwidescriptgen/redditwide.php">Reddit-Wide Ponymote Script Generator</a>! (more on this latter)</li>
+              <li>- Font changes to make it look nicer.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <iframe id='emotetables'></iframe>
+      <footer><strong>Super Emote Tool v0.05 - Created By <a href="http://www.reddit.com/user/j-brony/">J-Brony</a></strong></footer>
+    </div>
 
-	  (function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
+    <script type='text/javascript' src='script.js'></script>
+    <script type='text/javascript'>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-28726533-1']);
+      _gaq.push(['_trackPageview']);
 
-	</script>
-</head>
-<body>
-	<div id="wrapper2">
-	<ul id='subredditmenu'>
-		<li><h2><u>Super Emote Tool</u></h3></li>
-		<li><a>MyLittlePony</a></li>
-		<li><a>MLPlounge</a></li>
-		<li><a>MyLittleLivestream</a></li>
-		<li><a>MyLittleAndySonic1</a></li>
-		<li><a>MLAS1Animotes</a></li>
-		<li><a>MyLittleWtf</a></li>
-		<li><a>IdLikeToBeATree</a></li>
-		<li><a>MyLittleOnions</a></li>
-		<li><a>VinylScratch</a></li>
-		<li><a>Applejack</a></li>
-		<li><a>MyLittleSquidward</a></li>
-		<li><a>MyLittleFortress</a></li>
-		<li><a>MyLittleNopeNopeNope</a></li>
-		<li><a>DaylightEmotes</a></li>
-		<li><a>MyLittleDaww</a></li>
-		<li><a>MyLittleNanners</a></li>
-		<li><a>MyLittleNoSleep</a></li>
-		<li><a>MyLittleDamon</a></li>
-		<li><a>TheBestPony</a></li>
-		<li><a>tbpimagedump</a></li>
-		<li><a>Roseluck</a></li>
-		<li><a>MyLittleMusician</a></li>
-		<li><a>MyLittleCelestias</a></li>
-		<li><a>MyLittleChaos</a></li>
-		<li><a>MyLittleAlcoholic</a></li>
-		<li><a>MyLittleListenToThis</a></li>
-		<li><a>Surprise</a></li>
-		<li><a>PinkiePie</a></li>
-		<li><a>TwilightSparkle</a></li>
-		<li><a>Minuette</a></li>
-		<li><a>Lyra</a></li>
-		<li><a>MyLittleFoodManes</a></li>
-		<li><a>MyLittleSports</a></li>
-	</ul>
-	</div>
-<div id="wrapper">
-	<div id="contentarea">
-		<img src="images/choose.png" alt='Choose A SubReddit!'/>
-		<div id="textblock">
-			<h2>Welcome to the Super Emote Tool!</h2>
-	
-			<h3>What is this thing anyways?</h3>
-			I used to be like you hopping around to all the different pony subs trying to find the emote I wanted to use.<br/>
-			So I figured why not put them all in one place? After some serious nose to the grindstone copy pasta and things of that nature<br/>
-			the Super Emote Toool was born!
-	
-			<h3>The page for (x) is missing some emotes!</h3>
-			First thing to note is I try to only include emotes unique to the sub.<br/>
-			I do this to reduce clutter and confusion and also because a lot of people use scripts to see emotes from other subs everywhere on reddit already!<br/>
-			Other than that if you feel that I have genuinely missed an emote please shoot me an <a href="http://scr.im/mljbrony" target="_blank">email</a>! 
-	
-			<h3>Would you add my sub to the tool?</h3>
-			Shoot me an <a href="http://scr.im/mljbrony" target="_blank">email</a> and we can discuss it! Keep in mind that it should have unique emotes and be pony related.
-	
-			<h3>Who is the best pony?</h3>
-			Why that would be Cheerilee, thanks for asking! <img src="images/cheerilee.png" alt="Deal with it..." />
-			
-			<h3 style='color: blue;'>Whats New in v0.05:</h3>
-			<ul>
-				<li>- New Navigation Method.</li>
-				<li>- Send feedback to me <a href="http://scr.im/mljbrony" target="_blank">here</a></li>
-			</ul>
-			
-			<h3 style='color: blue;'>Whats New in v0.04:</h3>
-			<ul>
-				<li>- Removed the click-ability of the emotes.</li>
-				<li>- When mousing over an emote it will show the code used to produce that emote.</li>
-			</ul>
-	
-			<h3 style='color: blue;'>Whats New in v0.03:</h3>
-			<ul>
-				<li>- Major backend changes thanks to <a href="http://www.reddit.com/user/AcidandGrit">AcidandGrit</a>!</li>
-				<li>- Changed links to scripts for subreddits to the new <a href="http://jbrony.nfshost.com/redditwidescriptgen/redditwide.php">Reddit-Wide Ponymote Script Generator</a>! (more on this latter)</li>
-				<li>- Font changes to make it look nicer.</li>
-			</ul>
-		</div>
-	</div>
-	<iframe id='emotetables'></iframe>
-	<footer><strong>Super Emote Tool v0.05 - Created By <a href="http://www.reddit.com/user/j-brony/">J-Brony</a></strong></footer>
-</div>
-</body>
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>
