@@ -111,3 +111,11 @@ td{
 #subredditmenu a:active {
 	color:orangered;
 }
+
+.changelog {
+  margin-left: 1em;
+}
+
+.changelog h3 {
+  color: blue;
+}
